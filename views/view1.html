@@ -42,7 +42,7 @@
                     <div class="d-work" ng-repeat="work in curPro.page">
                         <div class="d-probg" ng-repeat="pro in  work.ImgTmpData" ng-class="{'cur':$index==curIndex}" ng-style="{position:'absolute','background-color':'rgba(0,0,0,0.3)',top:pro.y*rate,left:pro.x*rate,width:pro.w*rate,height:pro.h*rate}">
                             <div class="d-wrap" ng-style="{'width':pro.w*rate,'height':pro.h*rate}" ng-click="wrapshowTools($index,$parent.$index)">
-                                <img ng-src="{{pro.imgInfor.src}}" data-img="{{pro.imgInfor.src}}" data-index="{{$index+','+$parent.$index}}"  x-lvl-draggable="true"  x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl,$index,$parent.$index)" ng-style="pro.imgInfor.style1" ng-class="{'none-img':(pro.imgInfor.src=='images/none.jpg')}" >
+                                <img ng-src="{{pro.imgInfor.src}}" data-img="{{pro.imgInfor.src}}" data-index="{{$index+','+$parent.$index}}"  x-lvl-draggable="true"  x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl,$index,$parent.$index)" ng-style="pro.imgInfor.style1" ng-class="{'none-img':(pro.imgInfor.src=='images/index/none.jpg')}" >
                                </div>
                             <div class="d-movebar" ng-style="movePointStyle"  ng-if="$index==curIndex&&$parent.$index==curPIndex" draggable><i class="fa-arrows fa fa-2x"></i></div>
                             <div class="d-toolbar" ng-if="$index==curIndex&&$parent.$index==curPIndex" >
@@ -55,7 +55,7 @@
                                     <li ng-click="ngToolDelete()"><i class="fa-close fa fa-2x"></i><p>删除</p></li>
                                 </ul>
                             </div>
-                            <img ng-src="{{pro.imgInfor.src}}" ng-if="$index==curIndex&&$parent.$index==curPIndex" ng-click="needinit()"   ng-style="pro.imgInfor.style1" ng-class="{'none-img':(pro.imgInfor.src=='images/none.jpg')}" >
+                            <img ng-src="{{pro.imgInfor.src}}" ng-if="$index==curIndex&&$parent.$index==curPIndex" ng-click="needinit()"   ng-style="pro.imgInfor.style1" ng-class="{'none-img':(pro.imgInfor.src=='images/index/none.jpg')}" >
                         </div>
                         <div class="d-currentTemp">
                             <div class="dwrap-img" >
