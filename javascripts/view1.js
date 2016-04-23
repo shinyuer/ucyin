@@ -67,7 +67,7 @@ angular.module('myApp.view1', ['ngRoute', 'lvl.directives.dragdrop'])
         ];
         //模板列表数据
         $scope.listTmp = {
-            width: 800, height: 800, tmpPage: 1, tmpList: [
+            width: 800, height: 800, tmpPage: 2, tmpList: [
                 {
                     src: "images/picFrames/Frame0.png", tmpType: 2, tmpImgs: 1,
                     ImgTmpData: [{x: 0, y: 0, w: 800, h: 800, imgInfor: {src: 'images/index/none.jpg'}}]
