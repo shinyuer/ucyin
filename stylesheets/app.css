@@ -136,7 +136,7 @@ html,body,.pageView{height: 100%;width: 100%;overflow: hidden;}
     width:905px;
     height:540px;
     position:relative;
-    background:transparent url(../../app/images/bg.png) no-repeat 9px 27px;
+    background:transparent url(../images/index/bg.png) no-repeat 9px 27px;
 }
 .booklet .b-wrap-right img{
     border:1px solid #E6E3C2;
@@ -150,7 +150,7 @@ a#prev_page_button{
     cursor:pointer;
     margin-top:-20px;
     top:50%;
-    background:transparent url(../../app/images/buttons.png) no-repeat 0px -40px;
+    background:transparent url(../images/index/buttons.png) no-repeat 0px -40px;
 }
 a#prev_page_button{
     left:-30px;
@@ -176,7 +176,7 @@ a#prev_page_button:hover{
     color:#fff;
     padding-left:60px;
     font-size:15px;
-    background: #000 url(../../app/images/ajax-loader.gif) no-repeat 10px 50%;
+    background: #000 url(../images/index/ajax-loader.gif) no-repeat 10px 50%;
     opacity: 0.7;
     z-index:9999;
     -moz-border-radius:20px;
