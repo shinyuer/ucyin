@@ -1,0 +1,30 @@
+{
+  "name": "ucyin",
+  "homepage": "https://github.com/shinyuer/ucyin",
+  "authors": [
+    "shiny <35998585@qq.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests",
+    "bower_components/"
+  ],
+  "dependencies": {
+    "angular-mocks": "~1.4.0",
+    "angular-loader": "~1.4.0",
+    "angular-animate": "~1.5.1",
+    "angular-route": "~1.4.0",
+    "bootstrap": "~3.3.6",
+    "font-awesome": "~4.5.0",
+    "html5-boilerplate": "~5.2.0",
+    "underscore": "~1.8.3",
+    "jquery": "~2.2.1"
+  }
+}

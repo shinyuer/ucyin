@@ -1,0 +1,115 @@
+<div class="main" resize>
+    <section class="sec-left-upImgs">
+        <header class="title">本地上传</header>
+        <div class="btngroud">
+            <button class="btn">添加图片</button>
+            <button class="btn"  ng-click="autoFillImg()">自动填图</button>
+        </div>
+        <div class="div-ulimgs">
+            <div class="dleft-scroll">
+                <ul class="ul_uploadimgs">
+                    <li ng-repeat="item in listImg">
+                        <div  x-lvl-draggable="true" data-color="green"  class="drap" data-img="{{item.src}}" ng-style="{'background-image':'url('+item.src+')'}"></div>
+                    </li>
+                    <div class="clearfix"></div>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="sec-right-main">
+        <header>
+            <div class="header-left pull-left">
+                <a class="btn"  ng-click="goView2()">预览页面</a>
+                <button class="btn">平铺页面</button>
+            </div>
+            <div class="header-right pull-right">
+                <button class="btn">保存</button>
+            </div>
+        </header>
+        <div class="d-workspace">
+            <div class="d-workmain">
+                <div class="d-workleft">
+                    <a class="a-add" ng-click="ngaddPagePre()"> + </a>
+                    <a class="a-pagepre" ng-click="ngPrePro()" ng-disabled="listProindex==0" > <i class="fa fa-angle-left fa-3x"></i> </a>
+                    <p class="p-pagenum">
+                        <span class="sp-pagenum" ng-bind="listProindex*listPro.tmpPage+1"></span>
+                        <span class="sp-split">/</span>
+                        <span class="sp-pageall" ng-bind="listPro.tmpPage*listPro.tmpList.length"></span>
+                    </p>
+                </div>
+                <!--ng-style="{'max-width':pro.w*rate,'max-height':pro.h*rate}"  -->
+                <div class="d-workplace" id="workplace">
+                    <div class="d-work" ng-repeat="work in curPro.page">
+                        <div class="d-probg" ng-repeat="pro in  work.ImgTmpData" ng-class="{'cur':$index==curIndex}" ng-style="{position:'absolute','background-color':'rgba(0,0,0,0.3)',top:pro.y*rate,left:pro.x*rate,width:pro.w*rate,height:pro.h*rate}">
+                            <div class="d-wrap" ng-style="{'width':pro.w*rate,'height':pro.h*rate}" ng-click="wrapshowTools($index,$parent.$index)">
+                                <img ng-src="{{pro.imgInfor.src}}" data-img="{{pro.imgInfor.src}}" data-index="{{$index+','+$parent.$index}}"  x-lvl-draggable="true"  x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl,$index,$parent.$index)" ng-style="pro.imgInfor.style1" ng-class="{'none-img':(pro.imgInfor.src=='images/none.jpg')}" >
+                               </div>
+                            <div class="d-movebar" ng-style="movePointStyle"  ng-if="$index==curIndex&&$parent.$index==curPIndex" draggable><i class="fa-arrows fa fa-2x"></i></div>
+                            <div class="d-toolbar" ng-if="$index==curIndex&&$parent.$index==curPIndex" >
+                                <ul>
+                                    <li ng-click="ngToolLarge()"><i class="fa-plus fa fa-2x"></i><p>放大</p></li>
+                                    <li ng-click="ngToolSmall()"><i class="fa-minus fa fa-2x"></i><p>缩小</p></li>
+                                    <li ng-click="ngToolFull()"><i class="fa-expand fa fa-2x"></i><p>填满</p></li>
+                                    <li ng-click="ngToolFit()"><i class="fa-compress fa fa-2x"></i><p>适应</p></li>
+                                    <li ng-click="ngToolRotato()"><i class="fa-rotate-left fa fa-2x"></i><p>旋转</p></li>
+                                    <li ng-click="ngToolDelete()"><i class="fa-close fa fa-2x"></i><p>删除</p></li>
+                                </ul>
+                            </div>
+                            <img ng-src="{{pro.imgInfor.src}}" ng-if="$index==curIndex&&$parent.$index==curPIndex" ng-click="needinit()"   ng-style="pro.imgInfor.style1" ng-class="{'none-img':(pro.imgInfor.src=='images/none.jpg')}" >
+                        </div>
+                        <div class="d-currentTemp">
+                            <div class="dwrap-img" >
+                                <img ng-src="{{work.src}}" class="imgPro" ng-style="workbgStyle">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-workright">
+                    <a class="a-add" ng-click="ngaddPageNext()">+</a>
+                    <a class="a-pagepre" ng-disabled="listProindex==listPro.tmpList.length-1" ng-click="ngNextPro()"><i class="fa fa-angle-right fa-3x"></i></a>
+                    <p class="p-pagenum" >
+                        <span class="sp-pagenum" ng-bind="listProindex*listPro.tmpPage+listPro.tmpPage"></span>
+                        <span class="sp-split">/</span>
+                        <span class="sp-pageall" ng-bind="listPro.tmpPage*listPro.tmpList.length"></span></p>
+                </div>
+            </div>
+            <div class="d-workbtns">
+                <div class="dwrap-workbtn">
+                    <div class="dwrap-mdlist" ng-if="pageOption.showmdlist==1">
+                        <ul class="ul-mdimglist">
+                            <li ng-repeat="item in listTmp.tmpList" ng-click="setTemp(1,$index)"><img ng-src="{{item.src}}" style="max-width: 100px;max-height: 90px;"></li>
+                        </ul>
+                    </div>
+                    <a class="btn" ng-click="showLeftModel()">切换版式</a></div>
+                <div class="dwrap-workbtn"><a class="btn" ng-click="ngDeletePage()">删除当前页</a></div>
+                <div class="dwrap-workbtn" ng-if="listPro.tmpPage==2">
+                    <div class="dwrap-mdlist right"  ng-if="pageOption.showmdlist==2">
+                        <ul class="ul-mdimglist">
+                            <li ng-repeat="item in listTmp.tmpList" ng-click="setTemp(2,$index)"><img ng-src="{{item.src}}" style="max-width: 100px;max-height: 90px;"></li>
+                        </ul>
+                    </div>
+                    <a class="btn" ng-click="showRightModel()">切换版式</a></div>
+            </div>
+        </div>
+        <div class="d-mblist">
+            <div class="nav-left"><i class="fa fa-angle-left fa-3x"></i></div>
+            <div class="nav-right"><i class="fa fa-angle-right fa-3x"></i></div>
+            <div class="dwrap-scroll">
+                <!--(listPro.tmpList.length*listPro.tmpList.tmpPage*(listTmp.width*(60/listTmp.height)+10)+50)-->
+                <ul class="ul_mblist" ng-style="{'width':listPro.tmpList.length*listPro.tmpPage*72+60+'px'}">
+                    <li ng-repeat="item in listPro.tmpList" ng-click="selectpro($index)" ng-class="{'cur':$index==listProindex}">
+                        <div ng-repeat=" page  in item.page" style="display: inline-block;position:relative;">
+                            <div class="d-probg" ng-repeat="pro in  page.ImgTmpData"  ng-style="{position:'absolute','background-color':'rgba(0,0,0,0.3)',top:pro.y*ratemb,left:pro.x*ratemb,width:pro.w*ratemb,height:pro.h*ratemb}">
+                                <div class="d-wrap" ng-style="{'width':pro.w*ratemb,'height':pro.h*ratemb}">
+                                    <img ng-src="{{pro.imgInfor.src}}" ng-style="{'max-width':pro.w*ratemb,'max-height':pro.h*ratemb}">
+                                </div>
+                            </div>
+                            <div class="pull-left"> <img class="mobanImg" ng-src="{{page.src}}"></div>
+                        </div>
+                    </li>
+                    <div class="clearfix"></div>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
