@@ -63,32 +63,7 @@ angular.module('myApp.view1', ['ngRoute', 'lvl.directives.dragdrop'])
             {src: "images/uploadImgs/9.jpg", width: 306, height: 230},
             {src: "images/uploadImgs/10.jpg", width: 306, height: 230},
             {src: "images/uploadImgs/11.jpg", width: 306, height: 230},
-            {src: "images/uploadImgs/12.jpg", width: 306, height: 230},
-            {src: "images/uploadImgs/1.jpg", width: 706, height: 530},
-            {src: "images/uploadImgs/2.jpg", width: 720, height: 480},
-            {src: "images/uploadImgs/3.jpg", width: 306, height: 230},
-            {src: "images/uploadImgs/4.jpg", width: 306, height: 230},
-            {src: "images/uploadImgs/5.jpg", width: 306, height: 230},
-            {src: "images/uploadImgs/6.jpg", width: 306, height: 230},
-            {src: "images/uploadImgs/7.jpg", width: 306, height: 230},
-            {src: "images/uploadImgs/8.jpg", width: 306, height: 230},
-            {src: "images/uploadImgs/9.jpg", width: 306, height: 230},
-            {src: "images/uploadImgs/10.jpg", width: 306, height: 230},
-            {src: "images/uploadImgs/11.jpg", width: 306, height: 230},
-            {src: "images/uploadImgs/12.jpg", width: 306, height: 230},
-            {src: "images/uploadImgs/1.jpg", width: 706, height: 530},
-            {src: "images/uploadImgs/2.jpg", width: 720, height: 480},
-            {src: "images/uploadImgs/3.jpg", width: 306, height: 230},
-            {src: "images/uploadImgs/4.jpg", width: 306, height: 230},
-            {src: "images/uploadImgs/5.jpg", width: 306, height: 230},
-            {src: "images/uploadImgs/6.jpg", width: 306, height: 230},
-            {src: "images/uploadImgs/7.jpg", width: 306, height: 230},
-            {src: "images/uploadImgs/8.jpg", width: 306, height: 230},
-            {src: "images/uploadImgs/9.jpg", width: 306, height: 230},
-            {src: "images/uploadImgs/10.jpg", width: 306, height: 230},
-            {src: "images/uploadImgs/11.jpg", width: 306, height: 230},
-            {src: "images/uploadImgs/12.jpg", width: 306, height: 230},
-
+            {src: "images/uploadImgs/12.jpg", width: 306, height: 230}
         ];
         //模板列表数据
         $scope.listTmp = {
